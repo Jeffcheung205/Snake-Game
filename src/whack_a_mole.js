@@ -77,7 +77,7 @@ window.initGame = (React, assetsUrl) => {
       React.createElement('p', null, `Score: ${score}`),
       gameOver && React.createElement('p',  'Game Over!'),
       React.createElement(
-        'div',
+         'div',
         { className: "game-board" },
         Array.from({ length: 20 }, (_, rowIndex) =>
           React.createElement(
