@@ -4,7 +4,7 @@ window.initGame = (React, assetsUrl) => {
 
   const SnakeGame = ({ assetsUrl }) => {
     const [snake, setSnake] = useState([[0, 0]]);
-    const [food, setFood] = useState([Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)]);
+    const [food, setFood] = useState([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
     const [direction, setDirection] = useState([0, 1]); // Starting moving right
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
@@ -32,7 +32,7 @@ window.initGame = (React, assetsUrl) => {
         // Check if snake has eaten the food
         if (newHead[0] === food[0] && newHead[1] === food[1]) {
           setScore(score + 1);
-          setFood([Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)]);
+          setFood([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
         } else {
           newSnake.pop(); // Remove the tail
         }
