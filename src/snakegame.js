@@ -76,7 +76,7 @@ window.initGame = (React, assetsUrl) => {
       React.createElement('h2', null, "Snake Game"),
       React.createElement('p', null, `Score: ${score}`),
       gameOver && React.createElement('p', { style: { color: 'red' } }, 'Game Over!'),
-      // Move the game board below the title and score
+      React.createElement('button', { onClick: resetGame }, "Reset Game"), // Reset button
       React.createElement(
         'div',
         { className: "game-board" },
@@ -85,21 +85,20 @@ window.initGame = (React, assetsUrl) => {
             'div',
             { key: rowIndex, className: 'row' },
             Array.from({ length: 20 }, (_, colIndex) =>
-               React.createElement(
+              React.createElement(
                 'div',
                 {
                   key: colIndex,
-                  className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''} 
-                  ${food[0] === rowIndex && food[1] === colIndex ? 'food' : ''}`
+                  className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''}`,
+                  style: food[0] === rowIndex && food[1] === colIndex ? { backgroundImage: `url('${assetsUrl}/Food.png')`, backgroundSize: 'cover' } : {}
                 }
-                 )
               )
             )
           )
         )
+      )
     );
   };
-
   return () => React.createElement(SnakeGame, { assetsUrl: assetsUrl });
 };
 
