@@ -24,7 +24,7 @@
   background-color: #228B22; /* Snake color */
 }
 
-.food {
+.cell {
  background-image: url('${assetsUrl}/Food.png');
 background-size: cover;
 }
