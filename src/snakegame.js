@@ -42,7 +42,7 @@ window.initGame = (React, assetsUrl) => {
         setSnake(newSnake);
       };
 
-      const interval = setInterval(moveSnake, 200);
+      const interval = setInterval(moveSnake, 10);
       return () => clearInterval(interval);
     }, [snake, direction, food, gameOver, score]);
 
