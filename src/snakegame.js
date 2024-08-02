@@ -19,8 +19,8 @@ window.initGame = (React, assetsUrl) => {
 
         // Check for collision with walls or self
         if (
-          newHead[0] < 0 || newHead[0] >= 10 || 
-          newHead[1] < 0 || newHead[1] >= 10 || 
+          newHead[0] < 0 || newHead[0] >= 20 || 
+          newHead[1] < 0 || newHead[1] >= 20 || 
           newSnake.slice(1).some(segment => segment[0] === newHead[0] && segment[1] === newHead[1])
         ) {
           setGameOver(true);
