@@ -96,7 +96,6 @@ window.initGame = (React, assetsUrl) => {
             )
           )
         )
-      )
     );
   };
 
