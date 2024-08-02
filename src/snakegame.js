@@ -4,7 +4,7 @@ window.initGame = (React, assetsUrl) => {
 
   const SnakeGame = ({ assetsUrl }) => {
     const [snake, setSnake] = useState([[0, 0]]);
-    const [food, setFood] = useState([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
+    const [food, setFood] = useState([Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)]);
     const [direction, setDirection] = useState([0, 1]); // Starting moving right
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
@@ -19,8 +19,8 @@ window.initGame = (React, assetsUrl) => {
 
         // Check for collision with walls or self
         if (
-          newHead[0] < 0 || newHead[0] >= 20 || 
-          newHead[1] < 0 || newHead[1] >= 20 || 
+          newHead[0] < 0 || newHead[0] >= 10 || 
+          newHead[1] < 0 || newHead[1] >= 10 || 
           newSnake.slice(1).some(segment => segment[0] === newHead[0] && segment[1] === newHead[1])
         ) {
           setGameOver(true);
@@ -32,7 +32,7 @@ window.initGame = (React, assetsUrl) => {
         // Check if snake has eaten the food
         if (newHead[0] === food[0] && newHead[1] === food[1]) {
           setScore(score + 1);
-          setFood([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
+          setFood([Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)]);
         } else {
           newSnake.pop(); // Remove the tail
         }
@@ -40,7 +40,7 @@ window.initGame = (React, assetsUrl) => {
         setSnake(newSnake);
       };
 
-      const interval = setInterval(moveSnake, 200);
+      const interval = setInterval(moveSnake, 100);
       return () => clearInterval(interval);
     }, [snake, direction, food, gameOver, score]);
 
