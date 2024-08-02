@@ -3,12 +3,14 @@ window.initGame = (React, assetsUrl) => {
   const { useState, useEffect } = React;
 
   const SnakeGame = ({ assetsUrl }) => {
+    const initialSnake = [[0, 0]];
+    const initialFood = [Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)];
     const [snake, setSnake] = useState([[0, 0]]);
     const [food, setFood] = useState([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
     const [direction, setDirection] = useState([0, 1]); // Starting moving right
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
-
+    
     useEffect(() => {
       const moveSnake = () => {
         if (gameOver) return;
