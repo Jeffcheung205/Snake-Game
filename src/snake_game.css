@@ -27,3 +27,7 @@
 .food {
   background-color: #FF0000; /* Food color */
 }
+
+p {
+  color: red;
+}
