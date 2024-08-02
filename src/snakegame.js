@@ -95,11 +95,11 @@ window.initGame = (React, assetsUrl) => {
       React.createElement(
         'div',
         { className: "game-board" },
-        Array.from({ length: 20 }, (_, rowIndex) =>
+        Array.from({ length: 10 }, (_, rowIndex) =>
           React.createElement(
             'div',
             { key: rowIndex, className: 'row' },
-            Array.from({ length: 20 }, (_, colIndex) =>
+            Array.from({ length: 10 }, (_, colIndex) =>
               React.createElement(
                'div',
             {
