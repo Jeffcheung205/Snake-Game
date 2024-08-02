@@ -24,10 +24,6 @@
   background-color: #228B22; /* Snake color */
 }
 
-.food {
- background-image: url('${assetsUrl}/Food.png');
-background-size: cover;
-}
 
 p {
   color: red;
