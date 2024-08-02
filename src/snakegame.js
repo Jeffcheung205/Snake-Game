@@ -70,6 +70,14 @@ window.initGame = (React, assetsUrl) => {
       };
     }, []);
 
+    const resetGame = () => {
+      setSnake(initialSnake);
+      setFood(initialFood);
+      setDirection([0, 1]);
+      setScore(0);
+      setGameOver(false);
+    };
+
     return React.createElement(
       'div',
       { className: "snake-game" },
