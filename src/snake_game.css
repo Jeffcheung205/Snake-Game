@@ -20,6 +20,11 @@
   border: 1px solid #ccc;
 }
 
+.food {
+  background-image: url('${assetsUrl}/Food.png');
+  background-size: cover;
+}
+
 .snake {
   background-color: #228B22; /* Snake color */
 }
