@@ -25,7 +25,8 @@
 }
 
 .food {
-  background-color: #FF0000; /* Food color */
+ background-image: url('${assetsUrl}/Food.png');
+background-size: cover;
 }
 
 p {
