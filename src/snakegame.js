@@ -75,9 +75,10 @@ window.initGame = (React, assetsUrl) => {
       { className: "snake-game" },
       React.createElement('h2', null, "Snake Game"),
       React.createElement('p', null, `Score: ${score}`),
-      gameOver && React.createElement('p',  'Game Over!'),
+      gameOver && React.createElement('p', { style: { color: 'red' } }, 'Game Over!'),
+      // Move the game board below the title and score
       React.createElement(
-         'div',
+        'div',
         { className: "game-board" },
         Array.from({ length: 20 }, (_, rowIndex) =>
           React.createElement(
@@ -87,7 +88,7 @@ window.initGame = (React, assetsUrl) => {
               React.createElement(
                 'div',
                 {
-                 key: colIndex,
+                  key: colIndex,
                   className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''} ${food[0] === rowIndex && food[1] === colIndex ? 'food' : ''}`
                 }
               )
