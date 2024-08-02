@@ -91,6 +91,7 @@ window.initGame = (React, assetsUrl) => {
                   key: colIndex,
                   className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''} 
                   ${food[0] === rowIndex && food[1] === colIndex ? 'food' : ''}`
+                }
               )
             )
           )
