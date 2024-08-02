@@ -85,7 +85,7 @@ window.initGame = (React, assetsUrl) => {
       { className: "snake-game" },
       React.createElement('h2', null, "Snake Game"),
       React.createElement('p', null, `Score: ${score}`),
-      gameOver && React.createElement('p', { style: { color: 'red' } }, 'Game Over!'),
+      gameOver && React.createElement('p', { style: { color: 'blue' } }, 'Game Over!'),
       React.createElement('img', {
         className: "reset",
         src: `${assetsUrl}/reset.png`,
