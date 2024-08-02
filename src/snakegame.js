@@ -85,11 +85,12 @@ window.initGame = (React, assetsUrl) => {
             'div',
             { key: rowIndex, className: 'row' },
             Array.from({ length: 20 }, (_, colIndex) =>
-              React.createElement(
+               React.createElement(
                 'div',
                 {
                   key: colIndex,
-                  className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''} ${food[0] === rowIndex && food[1] === colIndex ? 'food' : ''}`
+                  className: `cell ${snake.some(segment => segment[0] === rowIndex && segment[1] === colIndex) ? 'snake' : ''}`,
+                  style: food[0] === rowIndex && food[1] === colIndex ? { backgroundImage: `url('${assetsUrl}/Food.png')`, backgroundSize: 'cover' } : {}
                 }
               )
             )
