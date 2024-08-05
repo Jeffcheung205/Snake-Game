@@ -1,7 +1,12 @@
 /* whack-a-mole.css */
 .snake-game {
   text-align: center;
-  align-items: center; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-board {
